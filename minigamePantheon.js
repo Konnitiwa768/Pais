@@ -403,6 +403,14 @@ M.launch=function()
 			var me=M.gods[i];
 			AddEvent(l('templeGodDrag'+me.id),'mousedown',function(what){return function(e){if (e.button==0){M.dragGod(what);}}}(me));
 			AddEvent(l('templeGodDrag'+me.id),'mouseup',function(what){return function(e){if (e.button==0){M.dropGod(what);}}}(me));
+			AddEvent(l('templeGodDrag' + me.id), 'touchstart', function (what) { return function (e) {
+                            e.preventDefault();
+                            M.dragGod(what);
+                        } }(me));
+                        AddEvent(l('templeGodDrag' + me.id), 'touchend', function (what) { return function (e) {
+                            e.preventDefault();
+                            M.dropGod(what);
+                        } }(me));
 		}
 		for (var i in M.slot)
 		{
