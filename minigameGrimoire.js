@@ -39,7 +39,7 @@ M.launch=function()
 				desc:loc("Summon a random golden cookie. Each existing golden cookie makes this spell +%1% more likely to backfire.",15),
 				failDesc:loc("Summon an unlucky wrath cookie."),
 				icon:[22,11],
-				costMin:6,
+				costMin:10,
 				costPercent:0.6,
 				failFunc:function(fail)
 				{
@@ -483,7 +483,7 @@ M.launch=function()
 	{
 		//run each frame
 		if (Game.T%5==0) {M.computeMagicM();}
-		M.magicPS=Math.max(0.002,Math.pow(M.magic/Math.max(M.magicM,100),0.5))*0.002;
+		M.magicPS=Math.max(0.002,Math.pow(M.magic/Math.max(M.magicM,100),0.5))*0.006;
 		M.magic+=M.magicPS;
 		M.magic=Math.min(M.magic,M.magicM);
 		if (Game.T%5==0)
