@@ -39,7 +39,7 @@ M.launch=function()
 				desc:loc("Summon a random golden cookie. Each existing golden cookie makes this spell +%1% more likely to backfire.",15),
 				failDesc:loc("Summon an unlucky wrath cookie."),
 				icon:[22,11],
-				costMin:10,
+				costMin:6,
 				costPercent:0.6,
 				failFunc:function(fail)
 				{
